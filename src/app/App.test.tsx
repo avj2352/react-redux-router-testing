@@ -3,7 +3,7 @@ import App from './App';
 import {ChakraProvider} from '@chakra-ui/react';
 
 describe("<App/>", () => {
-    it('renders App component with Chakra Provider', () => {
+    it('renders App component with Redux & ReactRouter Provider', () => {
         render(
             <ChakraProvider><App/></ChakraProvider>
         );
