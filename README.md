@@ -1,5 +1,8 @@
 # Boilerplate code for React, Redux, Router and Chakra UI with Testing
 
+The following configuration uses create-react-app for setting up the project.
+
+
 ### package.json
 
 - Install the following dependencies
