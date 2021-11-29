@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { IAppState } from '../common/state/store';
 
 const App : FunctionComponent = () => {
-    const version = useSelector((state: IAppState) => state.version);
+    const version = useSelector(({app}:{app:IAppState}) => app.version);
     const {toggleColorMode} = useColorMode();
 
     React.useEffect(() => {

@@ -1,4 +1,3 @@
-import React from 'react';
 import {render, screen} from '../common/helpers/TestUtil';
 import App from './App';
 import {ChakraProvider} from '@chakra-ui/react';

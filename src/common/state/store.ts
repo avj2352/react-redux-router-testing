@@ -1,35 +1,25 @@
-import { createStore } from "redux";
-import { IDisplayUser } from "../aysnc/AsynCalls";
+import { createStore, combineReducers } from "redux";
+import { userReducer } from "./user";
 
 export enum ACTION_TYPE {
-    USER_PROFILE = 'user-profile'
+    APP_GENERAL = 'app/general',    
 };
 
 export type IAppState = {
-    version: string,
-    appName: string,
-    user: IDisplayUser
+    version: string, 
+    appName: string    
 };
-
-function getInitialUserSetting(): IDisplayUser {
-    return {
-        id: '',
-        email: '',
-        firstName: '',
-        lastName: '',
-        role: 'free' ,
-        subscriptionType: ''
-    };
-}
 
 export const initialState: IAppState = {
     version: `1.0.0`,
-    appName: `Mashup`,
-    user: getInitialUserSetting()
+    appName: `Mashup`,    
 };
 
-export function reducer(state = initialState, action: {type: ACTION_TYPE, payload: any}) {
+export function appReducer(state = initialState, action: {type: ACTION_TYPE, payload: any}) {
     return state;
 }
 
-export const store = createStore(reducer);
+export const store = createStore(combineReducers({
+    app: appReducer,
+    user: userReducer
+}));
